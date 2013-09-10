@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class DBitch - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>dbitch.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-add_log">#add_log</a>
+    
+    <li ><a href="#method-i-get_DB">#get_DB</a>
+    
+    <li ><a href="#method-i-get_timestamp_hash">#get_timestamp_hash</a>
+    
+    <li ><a href="#method-i-load_DB">#load_DB</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="./Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li class="file"><a href="./README_md.html">README</a>
+  
+    <li class="file"><a href="./config_ru.html">config.ru</a>
+  
+    <li class="file"><a href="./doc/DBitch_html.html">DBitch.html</a>
+  
+    <li class="file"><a href="./doc/Gemfile_html.html">Gemfile.html</a>
+  
+    <li class="file"><a href="./doc/Gemfile_lock_html.html">Gemfile_lock.html</a>
+  
+    <li class="file"><a href="./doc/README_md_html.html">README_md.html</a>
+  
+    <li class="file"><a href="./doc/config_ru_html.html">config_ru.html</a>
+  
+    <li class="file"><a href="./doc/created_rid.html">created.rid</a>
+  
+    <li class="file"><a href="./doc/doc/created_rid_html.html">created_rid.html</a>
+  
+    <li class="file"><a href="./doc/index_html.html">index.html</a>
+  
+    <li class="file"><a href="./doc/js/darkfish_js.html">darkfish.js</a>
+  
+    <li class="file"><a href="./doc/js/jquery_js.html">jquery.js</a>
+  
+    <li class="file"><a href="./doc/js/navigation_js.html">navigation.js</a>
+  
+    <li class="file"><a href="./doc/js/search_js.html">search.js</a>
+  
+    <li class="file"><a href="./doc/js/search_index_js.html">search_index.js</a>
+  
+    <li class="file"><a href="./doc/js/searcher_js.html">searcher.js</a>
+  
+    <li class="file"><a href="./doc/rdoc_css.html">rdoc.css</a>
+  
+    <li class="file"><a href="./doc/table_of_contents_html.html">table_of_contents.html</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./DBitch.html">DBitch</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class DBitch</h1>
+
+  <div id="description" class="description">
+    
+<p><a href="DBitch.html">DBitch</a> contains useful utilities for manipulating
+the Garbagé  server database. It&#39;s essentially a big bundle of
+shortcuts I&#39;ve written for  you. Be happy. Please initialize this class
+with the database you&#39;d like to  work with. Don&#39;t worry, you can
+always change to a different one later. This  should be a string describing
+the filepath relative to the application where  the databse is located.
+Something like: &#39;./mammas_recipes.db&#39;. BE AWARE: If  the DB
+don&#39;t exist already, this will create it.</p>
+
+<p>Examples</p>
+
+<pre class="ruby"><span class="ruby-identifier">myDBitch</span> = <span class="ruby-constant">DBitch</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">dbname</span>)
+<span class="ruby-comment"># =&gt; Daybreak::DB</span>
+
+<span class="ruby-constant">DBitch</span>.<span class="ruby-identifier">load_DB</span>(<span class="ruby-identifier">dbname</span>)
+<span class="ruby-comment"># =&gt; Daybreak::DB</span>
+
+<span class="ruby-constant">DBitch</span>.<span class="ruby-identifier">get_DB</span>
+<span class="ruby-comment"># =&gt; Daybreak::DB</span>
+
+<span class="ruby-constant">DBitch</span>.<span class="ruby-identifier">add_log</span>(<span class="ruby-constant">Log</span>)
+<span class="ruby-comment"># =&gt; true</span>
+<span class="ruby-identifier">myDBitch</span>.<span class="ruby-identifier">get_timestamp_hash</span>(<span class="ruby-identifier">timestamp</span>)
+<span class="ruby-comment"># =&gt; {:happy =&gt; 42, :ennui =&gt; 42, :sad =&gt; 42, :angry =&gt; 42, </span>
+:<span class="ruby-identifier">upset</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">42</span>, :<span class="ruby-identifier">content</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">42</span>, :<span class="ruby-identifier">regretful</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">42</span>, :<span class="ruby-identifier">lonely</span> =<span class="ruby-operator">&gt;</span>
+<span class="ruby-value">42</span>, :<span class="ruby-identifier">schadenfreude</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">42</span>, :<span class="ruby-identifier">empty</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">42</span>, :<span class="ruby-identifier">melancholy</span> =<span class="ruby-operator">&gt;</span> 
+<span class="ruby-value">42</span>, :<span class="ruby-identifier">none_of_the_above</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">42</span>}
+</pre>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(dbname)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Initializes a dbitch.</p>
+
+<p>dbname - a string describing the filepath where the database is located
+relative to the directory of the application. If the location does not hold
+a file of that name, by gum we&#39;ll make one there.</p>
+
+<p>Examples</p>
+
+<pre class="ruby"><span class="ruby-identifier">myDBitch</span> = <span class="ruby-constant">DBitch</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;./mammas_recipes.db&#39;</span>)
+<span class="ruby-comment"># =&gt; Daybreak::DB</span>
+</pre>
+
+<p>Returns the database opened or created.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File dbitch.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">dbname</span>)
+  <span class="ruby-ivar">@db</span> = <span class="ruby-constant">Daybreak</span><span class="ruby-operator">::</span><span class="ruby-constant">DB</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">dbname</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">get_DB</span>
+  <span class="ruby-ivar">@db</span>.<span class="ruby-identifier">flush</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-add_log" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_log</span><span
+            class="method-args">(log)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Public: File a Log in the database.</p>
+
+<p>log - the Log object to be filed in the database.</p>
+
+<p>Examples</p>
+
+<pre class="ruby"><span class="ruby-identifier">myDBitch</span>.<span class="ruby-identifier">add_log</span>(<span class="ruby-identifier">todaysLog</span>)
+<span class="ruby-comment"># =&gt; true</span>
+</pre>
+
+<p>Returns true if successfully added, false otherwise.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="add_log-source">
+            <pre><span class="ruby-comment"># File dbitch.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_log</span>(<span class="ruby-identifier">log</span>)
+
+  <span class="ruby-identifier">timestamp</span> = <span class="ruby-identifier">log</span>.<span class="ruby-identifier">timestamp</span>
+  <span class="ruby-identifier">happy</span> = <span class="ruby-identifier">log</span>.<span class="ruby-identifier">happy</span>
+  <span class="ruby-identifier">ennui</span> = <span class="ruby-identifier">log</span>.<span class="ruby-identifier">ennui</span>
+  <span class="ruby-identifier">sad</span> = <span class="ruby-identifier">log</span>.<span class="ruby-identifier">sad</span>
+  <span class="ruby-identifier">angry</span> = <span class="ruby-identifier">log</span>.<span class="ruby-identifier">angry</span>
+  <span class="ruby-identifier">upset</span> = <span class="ruby-identifier">log</span>.<span class="ruby-identifier">upset</span>
+  <span class="ruby-identifier">content</span> = <span class="ruby-identifier">log</span>.<span class="ruby-identifier">content</span>
+  <span class="ruby-identifier">regretful</span> = <span class="ruby-identifier">log</span>.<span class="ruby-identifier">regretful</span>
+  <span class="ruby-identifier">lonely</span> = <span class="ruby-identifier">log</span>.<span class="ruby-identifier">lonely</span>
+  <span class="ruby-identifier">schadenfreude</span> = <span class="ruby-identifier">log</span>.<span class="ruby-identifier">schadenfreude</span>
+  <span class="ruby-identifier">empty</span> = <span class="ruby-identifier">log</span>.<span class="ruby-identifier">empty</span>
+  <span class="ruby-identifier">melancholy</span> = <span class="ruby-identifier">log</span>.<span class="ruby-identifier">melancholy</span>
+  <span class="ruby-identifier">none_of_the_above</span> = <span class="ruby-identifier">log</span>.<span class="ruby-identifier">none_of_the_above</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@db</span>[<span class="ruby-identifier">timestamp</span>] <span class="ruby-keyword">then</span>
+
+    <span class="ruby-ivar">@hash</span> = <span class="ruby-ivar">@db</span>[<span class="ruby-identifier">timestamp</span>]
+
+    <span class="ruby-identifier">happy</span> = <span class="ruby-ivar">@hash</span>[<span class="ruby-value">:happy</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">happy</span>
+    <span class="ruby-identifier">ennui</span> = <span class="ruby-ivar">@hash</span>[<span class="ruby-value">:ennui</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">ennui</span>
+    <span class="ruby-identifier">sad</span> = <span class="ruby-ivar">@hash</span>[<span class="ruby-value">:sad</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">sad</span>
+    <span class="ruby-identifier">angry</span> = <span class="ruby-ivar">@hash</span>[<span class="ruby-value">:angry</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">angry</span>
+    <span class="ruby-identifier">upset</span> = <span class="ruby-ivar">@hash</span>[<span class="ruby-value">:upset</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">upset</span>
+    <span class="ruby-identifier">content</span> = <span class="ruby-ivar">@hash</span>[<span class="ruby-value">:content</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">content</span>
+    <span class="ruby-identifier">regretful</span> = <span class="ruby-ivar">@hash</span>[<span class="ruby-value">:regretful</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">regretful</span>
+    <span class="ruby-identifier">lonely</span> = <span class="ruby-ivar">@hash</span>[<span class="ruby-value">:lonely</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">lonely</span>
+    <span class="ruby-identifier">schadenfreude</span> = <span class="ruby-ivar">@hash</span>[<span class="ruby-value">:schadenfreude</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">schadenfreude</span>
+    <span class="ruby-identifier">empty</span> = <span class="ruby-ivar">@hash</span>[<span class="ruby-value">:empty</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">empty</span>
+    <span class="ruby-identifier">melancholy</span> = <span class="ruby-ivar">@hash</span>[<span class="ruby-value">:melancholy</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">melancholy</span>
+    <span class="ruby-identifier">none_of_the_above</span> = <span class="ruby-ivar">@hash</span>[<span class="ruby-value">:none_of_the_above</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">none_of_the_above</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@hash</span> = {<span class="ruby-value">:happy</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">happy</span>, <span class="ruby-value">:ennui</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">ennui</span>, <span class="ruby-value">:sad</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">sad</span>, <span class="ruby-value">:angry</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">angry</span>, <span class="ruby-value">:upset</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">upset</span>, <span class="ruby-value">:content</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">content</span>, <span class="ruby-value">:regretful</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">regretful</span>, <span class="ruby-value">:lonely</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">lonely</span>, <span class="ruby-value">:schadenfreude</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">schadenfreude</span>, <span class="ruby-value">:empty</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">empty</span>, <span class="ruby-value">:melancholy</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">melancholy</span>, <span class="ruby-value">:none_of_the_above</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">none_of_the_above</span>}
+
+  <span class="ruby-ivar">@db</span>.<span class="ruby-identifier">set!</span> <span class="ruby-identifier">timestamp</span>, <span class="ruby-ivar">@hash</span>
+  <span class="ruby-ivar">@db</span>.<span class="ruby-identifier">flush</span>
+
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@db</span>[<span class="ruby-identifier">timestamp</span>] <span class="ruby-operator">!=</span> <span class="ruby-ivar">@hash</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_log-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_log-method -->
+
+    
+      <div id="method-i-get_DB" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_DB</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Gets the database which you&#39;re currently Bitching about.</p>
+
+<p>Examples</p>
+
+<pre class="ruby"><span class="ruby-identifier">myDBitch</span>.<span class="ruby-identifier">get_DB</span>
+<span class="ruby-comment"># =&gt; Daybreak::DB</span>
+</pre>
+
+<p>Returns the database presently being worked on.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_DB-source">
+            <pre><span class="ruby-comment"># File dbitch.rb, line 71</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_DB</span>
+  
+  <span class="ruby-ivar">@db</span>.<span class="ruby-identifier">flush</span>
+  <span class="ruby-identifier">tempdb</span> = <span class="ruby-ivar">@db</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">tempdb</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_DB-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_DB-method -->
+
+    
+      <div id="method-i-get_timestamp_hash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_timestamp_hash</span><span
+            class="method-args">(timestamp)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Public: Fetch a hash from a particular timestamp</p>
+
+<p>timestamp - the timestamp to fetch the hash of</p>
+
+<p>Examples</p>
+
+<pre class="ruby"><span class="ruby-identifier">myDBitch</span>.<span class="ruby-identifier">get_timestamp_hash</span>(<span class="ruby-identifier">timestamp</span>)
+<span class="ruby-comment"># =&gt; {:happy =&gt; 42, :ennui =&gt; 42, :sad =&gt; 42, :angry =&gt; 42, </span>
+:<span class="ruby-identifier">upset</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">42</span>, :<span class="ruby-identifier">content</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">42</span>, :<span class="ruby-identifier">regretful</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">42</span>, :<span class="ruby-identifier">lonely</span> =<span class="ruby-operator">&gt;</span>
+<span class="ruby-value">42</span>, :<span class="ruby-identifier">schadenfreude</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">42</span>, :<span class="ruby-identifier">empty</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">42</span>, :<span class="ruby-identifier">melancholy</span> =<span class="ruby-operator">&gt;</span> 
+<span class="ruby-value">42</span>, :<span class="ruby-identifier">none_of_the_above</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">42</span>}
+</pre>
+
+<p>Returns the emotion hash for the timestamp specified.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_timestamp_hash-source">
+            <pre><span class="ruby-comment"># File dbitch.rb, line 147</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_timestamp_hash</span>(<span class="ruby-identifier">timestamp</span>)
+  <span class="ruby-identifier">hash</span> = <span class="ruby-ivar">@db</span>[<span class="ruby-identifier">timestamp</span>]
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_timestamp_hash-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_timestamp_hash-method -->
+
+    
+      <div id="method-i-load_DB" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">load_DB</span><span
+            class="method-args">(dbname)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Loads a database to Bitch about.</p>
+
+<p>dbname - a string describing the filepath where the database is located
+relative to the directory of the application. If the location does not hold
+a file of that name, by gum we&#39;ll make one there.</p>
+
+<p>Examples</p>
+
+<pre class="ruby"><span class="ruby-identifier">myDBitch</span>.<span class="ruby-identifier">load_DB</span>(<span class="ruby-string">&#39;./mammas_recipes.db&#39;</span>)
+<span class="ruby-comment"># =&gt; Daybreak::DB</span>
+</pre>
+
+<p>Returns the database opened or created.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="load_DB-source">
+            <pre><span class="ruby-comment"># File dbitch.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">load_DB</span>(<span class="ruby-identifier">dbname</span>)
+
+  <span class="ruby-ivar">@db</span> = <span class="ruby-constant">Daybreak</span><span class="ruby-operator">::</span><span class="ruby-constant">DB</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">dbname</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">get_DB</span>
+  <span class="ruby-ivar">@db</span>.<span class="ruby-identifier">flush</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- load_DB-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- load_DB-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.1.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

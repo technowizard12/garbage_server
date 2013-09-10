@@ -1,10 +1,12 @@
-# Public: DBitch contains useful utilities for manipulating the Garbagé 
+require 'daybreak'
+
+# DBitch contains useful utilities for manipulating the Garbagé 
 # server database. It's essentially a big bundle of shortcuts I've written for 
 # you. Be happy. Please initialize this class with the database you'd like to 
 # work with. Don't worry, you can always change to a different one later. This 
 # should be a string describing the filepath relative to the application where 
 # the databse is located. Something like: './mammas_recipes.db'. BE AWARE: If 
-#  the DB don't exist already, this will create it.
+# the DB don't exist already, this will create it.
 #
 # Examples
 #
@@ -24,35 +26,26 @@
 #   :upset => 42, :content => 42, :regretful => 42, :lonely =>
 #   42, :schadenfreude => 42, :empty => 42, :melancholy => 
 #   42, :none_of_the_above => 42}
-
-
-require 'daybreak'
-
 class DBitch
-
-  # Public: Initialize a dbitch.
+  # Initializes a dbitch.
   #
-  # dbname - a string describing the filepath where the database is located
-  #          relative to the directory of the application. If the location does
-  #          not hold a file of that name, by gum we'll make one there.
+  # dbname - a string describing the filepath where the database is located relative to the directory of the application. If the location does not hold a file of that name, by gum we'll make one there.
   #
   # Examples
   #
   #   myDBitch = DBitch.new('./mammas_recipes.db')
   #   # => Daybreak::DB
   #
-  # Returns the database opened or created
+  # Returns the database opened or created.
   def initialize(dbname)
     @db = Daybreak::DB.new dbname
     return self.get_DB
     @db.flush
   end
 
-  # Public: Load a database to Bitch about.
+  # Loads a database to Bitch about.
   #
-  # dbname - a string describing the filepath where the database is located
-  #          relative to the directory of the application. If the location does
-  #          not hold a file of that name, by gum we'll make one there.
+  # dbname - a string describing the filepath where the database is located relative to the directory of the application. If the location does not hold a file of that name, by gum we'll make one there.
   #
   # Examples
   #
@@ -67,7 +60,7 @@ class DBitch
     @db.flush
   end
 
-  # Public: Get the database which you're currently Bitching about.
+  # Gets the database which you're currently Bitching about.
   #
   # Examples
   #
