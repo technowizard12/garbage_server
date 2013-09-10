@@ -250,7 +250,7 @@ a file of that name, by gum we&#39;ll make one there.</p>
 <span class="ruby-comment"># =&gt; true</span>
 </pre>
 
-<p>Returns true if successfully added, false otherwise.</p>
+<p>Returns true if successfully added</p>
           
           
 
@@ -275,32 +275,26 @@ a file of that name, by gum we&#39;ll make one there.</p>
 
   <span class="ruby-keyword">if</span> <span class="ruby-ivar">@db</span>[<span class="ruby-identifier">timestamp</span>] <span class="ruby-keyword">then</span>
 
-    <span class="ruby-ivar">@hash</span> = <span class="ruby-ivar">@db</span>[<span class="ruby-identifier">timestamp</span>]
+    <span class="ruby-ivar">@db</span>[<span class="ruby-identifier">timestamp</span>][<span class="ruby-value">:happy</span>] = <span class="ruby-ivar">@db</span>[<span class="ruby-identifier">timestamp</span>][<span class="ruby-value">:happy</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">happy</span>
+    <span class="ruby-ivar">@db</span>[<span class="ruby-identifier">timestamp</span>][<span class="ruby-value">:ennui</span>] = <span class="ruby-ivar">@db</span>[<span class="ruby-identifier">timestamp</span>][<span class="ruby-value">:ennui</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">ennui</span>
+    <span class="ruby-ivar">@db</span>[<span class="ruby-identifier">timestamp</span>][<span class="ruby-value">:sad</span>] = <span class="ruby-ivar">@db</span>[<span class="ruby-identifier">timestamp</span>][<span class="ruby-value">:sad</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">sad</span>
+    <span class="ruby-ivar">@db</span>[<span class="ruby-identifier">timestamp</span>][<span class="ruby-value">:angry</span>] = <span class="ruby-ivar">@db</span>[<span class="ruby-identifier">timestamp</span>][<span class="ruby-value">:angry</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">angry</span>
+    <span class="ruby-ivar">@db</span>[<span class="ruby-identifier">timestamp</span>][<span class="ruby-value">:upset</span>] = <span class="ruby-ivar">@db</span>[<span class="ruby-identifier">timestamp</span>][<span class="ruby-value">:upset</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">upset</span>
+    <span class="ruby-ivar">@db</span>[<span class="ruby-identifier">timestamp</span>][<span class="ruby-value">:content</span>] = <span class="ruby-ivar">@db</span>[<span class="ruby-identifier">timestamp</span>][<span class="ruby-value">:content</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">content</span>
+    <span class="ruby-ivar">@db</span>[<span class="ruby-identifier">timestamp</span>][<span class="ruby-value">:regretful</span>] = <span class="ruby-ivar">@db</span>[<span class="ruby-identifier">timestamp</span>][<span class="ruby-value">:regretful</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">regretful</span>
+    <span class="ruby-ivar">@db</span>[<span class="ruby-identifier">timestamp</span>][<span class="ruby-value">:lonely</span>] = <span class="ruby-ivar">@db</span>[<span class="ruby-identifier">timestamp</span>][<span class="ruby-value">:lonely</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">lonely</span>
+    <span class="ruby-ivar">@db</span>[<span class="ruby-identifier">timestamp</span>][<span class="ruby-value">:schadenfreude</span>] = <span class="ruby-ivar">@db</span>[<span class="ruby-identifier">timestamp</span>][<span class="ruby-value">:schadenfreude</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">schadenfreude</span>
+    <span class="ruby-ivar">@db</span>[<span class="ruby-identifier">timestamp</span>][<span class="ruby-value">:empty</span>] = <span class="ruby-ivar">@db</span>[<span class="ruby-identifier">timestamp</span>][<span class="ruby-value">:empty</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">empty</span>
+    <span class="ruby-ivar">@db</span>[<span class="ruby-identifier">timestamp</span>][<span class="ruby-value">:melancholy</span>] = <span class="ruby-ivar">@db</span>[<span class="ruby-identifier">timestamp</span>][<span class="ruby-value">:melancholy</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">melancholy</span>
+    <span class="ruby-ivar">@db</span>[<span class="ruby-identifier">timestamp</span>][<span class="ruby-value">:none_of_the_above</span>] = <span class="ruby-ivar">@db</span>[<span class="ruby-identifier">timestamp</span>][<span class="ruby-value">:none_of_the_above</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">none_of_the_above</span>
+  <span class="ruby-keyword">else</span>
 
-    <span class="ruby-identifier">happy</span> = <span class="ruby-ivar">@hash</span>[<span class="ruby-value">:happy</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">happy</span>
-    <span class="ruby-identifier">ennui</span> = <span class="ruby-ivar">@hash</span>[<span class="ruby-value">:ennui</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">ennui</span>
-    <span class="ruby-identifier">sad</span> = <span class="ruby-ivar">@hash</span>[<span class="ruby-value">:sad</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">sad</span>
-    <span class="ruby-identifier">angry</span> = <span class="ruby-ivar">@hash</span>[<span class="ruby-value">:angry</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">angry</span>
-    <span class="ruby-identifier">upset</span> = <span class="ruby-ivar">@hash</span>[<span class="ruby-value">:upset</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">upset</span>
-    <span class="ruby-identifier">content</span> = <span class="ruby-ivar">@hash</span>[<span class="ruby-value">:content</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">content</span>
-    <span class="ruby-identifier">regretful</span> = <span class="ruby-ivar">@hash</span>[<span class="ruby-value">:regretful</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">regretful</span>
-    <span class="ruby-identifier">lonely</span> = <span class="ruby-ivar">@hash</span>[<span class="ruby-value">:lonely</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">lonely</span>
-    <span class="ruby-identifier">schadenfreude</span> = <span class="ruby-ivar">@hash</span>[<span class="ruby-value">:schadenfreude</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">schadenfreude</span>
-    <span class="ruby-identifier">empty</span> = <span class="ruby-ivar">@hash</span>[<span class="ruby-value">:empty</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">empty</span>
-    <span class="ruby-identifier">melancholy</span> = <span class="ruby-ivar">@hash</span>[<span class="ruby-value">:melancholy</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">melancholy</span>
-    <span class="ruby-identifier">none_of_the_above</span> = <span class="ruby-ivar">@hash</span>[<span class="ruby-value">:none_of_the_above</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">none_of_the_above</span>
+    <span class="ruby-ivar">@db</span>[<span class="ruby-identifier">timestamp</span>] = {<span class="ruby-value">:happy</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">happy</span>, <span class="ruby-value">:ennui</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">ennui</span>, <span class="ruby-value">:sad</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">sad</span>, <span class="ruby-value">:angry</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">angry</span>, <span class="ruby-value">:upset</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">upset</span>, <span class="ruby-value">:content</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">content</span>, <span class="ruby-value">:regretful</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">regretful</span>, <span class="ruby-value">:lonely</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">lonely</span>, <span class="ruby-value">:schadenfreude</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">schadenfreude</span>, <span class="ruby-value">:empty</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">empty</span>, <span class="ruby-value">:melancholy</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">melancholy</span>, <span class="ruby-value">:none_of_the_above</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">none_of_the_above</span>}
   <span class="ruby-keyword">end</span>
 
-  <span class="ruby-ivar">@hash</span> = {<span class="ruby-value">:happy</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">happy</span>, <span class="ruby-value">:ennui</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">ennui</span>, <span class="ruby-value">:sad</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">sad</span>, <span class="ruby-value">:angry</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">angry</span>, <span class="ruby-value">:upset</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">upset</span>, <span class="ruby-value">:content</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">content</span>, <span class="ruby-value">:regretful</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">regretful</span>, <span class="ruby-value">:lonely</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">lonely</span>, <span class="ruby-value">:schadenfreude</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">schadenfreude</span>, <span class="ruby-value">:empty</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">empty</span>, <span class="ruby-value">:melancholy</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">melancholy</span>, <span class="ruby-value">:none_of_the_above</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">none_of_the_above</span>}
-
-  <span class="ruby-ivar">@db</span>.<span class="ruby-identifier">set!</span> <span class="ruby-identifier">timestamp</span>, <span class="ruby-ivar">@hash</span>
   <span class="ruby-ivar">@db</span>.<span class="ruby-identifier">flush</span>
 
-  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@db</span>[<span class="ruby-identifier">timestamp</span>] <span class="ruby-operator">!=</span> <span class="ruby-ivar">@hash</span> <span class="ruby-keyword">then</span>
-    <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
-  <span class="ruby-keyword">else</span>
-    <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
-  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
 <span class="ruby-keyword">end</span></pre>
           </div><!-- add_log-source -->
           
@@ -388,7 +382,7 @@ a file of that name, by gum we&#39;ll make one there.</p>
 
           
           <div class="method-source-code" id="get_timestamp_hash-source">
-            <pre><span class="ruby-comment"># File dbitch.rb, line 148</span>
+            <pre><span class="ruby-comment"># File dbitch.rb, line 142</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_timestamp_hash</span>(<span class="ruby-identifier">timestamp</span>)
   <span class="ruby-identifier">hash</span> = <span class="ruby-ivar">@db</span>[<span class="ruby-identifier">timestamp</span>]
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">hash</span>

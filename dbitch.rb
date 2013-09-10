@@ -85,7 +85,7 @@ class DBitch
   #   myDBitch.add_log(todaysLog)
   #   # => true
   #
-  # Returns true if successfully added, false otherwise.
+  # Returns true if successfully added
   def add_log(log)
 
     timestamp = log.timestamp
@@ -104,32 +104,26 @@ class DBitch
 
     if @db[timestamp] then
 
-      @hash = @db[timestamp]
+      @db[timestamp][:happy] = @db[timestamp][:happy] + happy
+      @db[timestamp][:ennui] = @db[timestamp][:ennui] + ennui
+      @db[timestamp][:sad] = @db[timestamp][:sad] + sad
+      @db[timestamp][:angry] = @db[timestamp][:angry] + angry
+      @db[timestamp][:upset] = @db[timestamp][:upset] + upset
+      @db[timestamp][:content] = @db[timestamp][:content] + content
+      @db[timestamp][:regretful] = @db[timestamp][:regretful] + regretful
+      @db[timestamp][:lonely] = @db[timestamp][:lonely] + lonely
+      @db[timestamp][:schadenfreude] = @db[timestamp][:schadenfreude] + schadenfreude
+      @db[timestamp][:empty] = @db[timestamp][:empty] + empty
+      @db[timestamp][:melancholy] = @db[timestamp][:melancholy] + melancholy
+      @db[timestamp][:none_of_the_above] = @db[timestamp][:none_of_the_above] + none_of_the_above
+    else
 
-      happy = @hash[:happy] + happy
-      ennui = @hash[:ennui] + ennui
-      sad = @hash[:sad] + sad
-      angry = @hash[:angry] + angry
-      upset = @hash[:upset] + upset
-      content = @hash[:content] + content
-      regretful = @hash[:regretful] + regretful
-      lonely = @hash[:lonely] + lonely
-      schadenfreude = @hash[:schadenfreude] + schadenfreude
-      empty = @hash[:empty] + empty
-      melancholy = @hash[:melancholy] + melancholy
-      none_of_the_above = @hash[:none_of_the_above] + none_of_the_above
+      @db[timestamp] = {:happy => happy, :ennui => ennui, :sad => sad, :angry => angry, :upset => upset, :content => content, :regretful => regretful, :lonely => lonely, :schadenfreude => schadenfreude, :empty => empty, :melancholy => melancholy, :none_of_the_above => none_of_the_above}
     end
 
-    @hash = {:happy => happy, :ennui => ennui, :sad => sad, :angry => angry, :upset => upset, :content => content, :regretful => regretful, :lonely => lonely, :schadenfreude => schadenfreude, :empty => empty, :melancholy => melancholy, :none_of_the_above => none_of_the_above}
-
-    @db.set! timestamp, @hash
     @db.flush
 
-    unless @db[timestamp] != @hash then
-      return true
-    else
-      return false
-    end
+    return true
   end
 
   # Public: Fetch a hash from a particular timestamp

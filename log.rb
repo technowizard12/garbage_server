@@ -9,7 +9,7 @@
 #   # => true
 class Log
 
-  # Public: Gets/Sets the emotion values for happy, ennui, sad, angry, upset, content, regretful, lonely, schadenfreude, empty, melancholy, and none_of_the_above. Please, for the love of god, only set these to either 0 or 1. Think of the children.
+  # Gets/Sets the emotion value. Please, for the love of god, only set this to either 0 or 1. Think of the children.
   attr_accessor :happy, :ennui, :sad, :angry, :upset, :content, :regretful, :lonely, :schadenfreude, :empty, :melancholy, :none_of_the_above
 
   #Public: Initializes a log. Brother, you know this.
