@@ -57,7 +57,39 @@
   
     <li class="file"><a href="./config_ru.html">config.ru</a>
   
+    <li class="file"><a href="./doc/DBitch_html.html">DBitch.html</a>
+  
+    <li class="file"><a href="./doc/Gemfile_html.html">Gemfile.html</a>
+  
+    <li class="file"><a href="./doc/Gemfile_lock_html.html">Gemfile_lock.html</a>
+  
+    <li class="file"><a href="./doc/Log_html.html">Log.html</a>
+  
+    <li class="file"><a href="./doc/README_md_html.html">README_md.html</a>
+  
+    <li class="file"><a href="./doc/config_ru_html.html">config_ru.html</a>
+  
     <li class="file"><a href="./doc/created_rid.html">created.rid</a>
+  
+    <li class="file"><a href="./doc/doc/created_rid_html.html">created_rid.html</a>
+  
+    <li class="file"><a href="./doc/index_html.html">index.html</a>
+  
+    <li class="file"><a href="./doc/js/darkfish_js.html">darkfish.js</a>
+  
+    <li class="file"><a href="./doc/js/jquery_js.html">jquery.js</a>
+  
+    <li class="file"><a href="./doc/js/navigation_js.html">navigation.js</a>
+  
+    <li class="file"><a href="./doc/js/search_js.html">search.js</a>
+  
+    <li class="file"><a href="./doc/js/search_index_js.html">search_index.js</a>
+  
+    <li class="file"><a href="./doc/js/searcher_js.html">searcher.js</a>
+  
+    <li class="file"><a href="./doc/rdoc_css.html">rdoc.css</a>
+  
+    <li class="file"><a href="./doc/table_of_contents_html.html">table_of_contents.html</a>
   
   </ul>
 </nav>
@@ -78,7 +110,59 @@
 </nav>
 
 <div id="documentation" class="description">
-<p>This is the API documentation for RDoc Documentation.
+
+<h1 id="label-Garbag%C3%A9+Serv%C3%A9r">Garbagé Servér<span><a href="#label-Garbag%C3%A9+Serv%C3%A9r">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<p>Howdy! This here&#39;s the server-side code for an assignment for ARTS 244:
+Topics in Sculpture: Recycled Materials at Willamette University. This
+particular piece is by Simon Orr. Now, isn&#39;t that something?</p>
+
+<h2 id="label-The+Practical+Upshot">The Practical Upshot<span><a href="#label-The+Practical+Upshot">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>This piece is an experiment in mapping the emotional space on campus. That
+means next to nothing by itself. Read on, dear reader, and all shall be
+explained.</p>
+
+<p>A marimba with 12 keys is constructed using recycled materials scavenged
+from the WU dumpsters. Super fun, right? Positioned above each key of the
+marimba is a small electromagnetic solenoid. The keys on the marimba
+correspond to 12 emotional states: happiness, ennui, sadness, anger, upset,
+contentment, regret, loneliness, schadenfreude, emptiness, melancholy, and
+the all important “none of the above”.</p>
+
+<p>WU Students are given the opportunity to, for however long they wish and as
+often as they wish visit a web server (This code!) which allows them to
+register whether or not they are feeling any of the given emotions.
+That&#39;s not the fun part, though. When they press submit, a Daybreak
+database logs a hash of these emotions as the value, with the timestamp as
+the key. Every time anybody registers an hash at that timestamp, the values
+are added to the existing values. Every two minutes, an Arduino with an
+Ethernet shield will poll the server (This code!) for any logs from the
+past two minutes. The server will respond with a number of times to actuate
+each solenoid corresponding with each emotion. The Arduino keeps track of
+the time by keeping tabs on an NTP time server. When a timestamp of the
+proper time is reached, the arduino turns its attention to This code! and,
+when the exchange with This code! is complete, resumes monitoring the NTP
+server.</p>
+
+<h2 id="label-How+it%27s+Done">How it&#39;s Done<span><a href="#label-How+it%27s+Done">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>This code, in particular, is the front-facing web server, the database
+wrangler, and the arduino-responder. This is all done with Sinatra out of
+app.rb, but there are several separate doohickeys which help.</p>
+<ul><li>
+<p>dbitch.rb</p>
+</li><li>
+<p>Wrangles the database</p>
+</li><li>
+<p>arduino.rb</p>
+</li><li>
+<p>Handles arduino responses</p>
+</li><li>
+<p>log.rb</p>
+</li><li>
+<p>The object which the responses are originally recorded in</p>
+</li></ul>
 </div>
 
 
