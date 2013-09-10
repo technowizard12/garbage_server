@@ -12,20 +12,36 @@ class Log
   # Gets/Sets the emotion value. Please, for the love of god, only set this to either 0 or 1. Think of the children.
   attr_accessor :happy, :ennui, :sad, :angry, :upset, :content, :regretful, :lonely, :schadenfreude, :empty, :melancholy, :none_of_the_above
 
-  #Public: Initializes a log. Brother, you know this.
+  # Initializes a log. Brother, you know this.
   #
   # happy - 1 or 0, depending on response
+  #
   # ennui - 1 or 0, depending on response
+  #
   # sad - 1 or 0, depending on response
+  #
   # angry - 1 or 0, depending on response
+  #
   # upset - 1 or 0, depending on response
+  #
   # content - 1 or 0, depending on response
+  #
   # regretful - 1 or 0, depending on response
+  #
   # lonely - 1 or 0, depending on response
+  #
   # schadenfreude - 1 or 0, depending on response
+  #
   # empty - 1 or 0, depending on response
+  #
   # melancholy - 1 or 0, depending on response
+  #
   # none_of_the_above - 1 or 0, depending on response
+  # 
+  # Examples
+  #
+  #   my_log.initialize(1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1)
+  #   # => true
   def initialize(happy, ennui, sad, angry, upset, content, regretful, lonely, schadenfreude, empty, melancholy, none_of_the_above)
     self.happy = happy
     self.ennui = ennui
@@ -39,6 +55,7 @@ class Log
     self.empty = empty
     self.melancholy = melancholy
     self.none_of_the_above = none_of_the_above
+    return true
   end
 end
 
