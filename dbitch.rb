@@ -1,4 +1,4 @@
-# Public: DBitch contains useful utilities for manipulating the GarbagArt 
+# Public: DBitch contains useful utilities for manipulating the Garbagé 
 # server database. It's essentially a big bundle of shortcuts I've written for 
 # you. Be happy. Please initialize this class with the database you'd like to 
 # work with. Don't worry, you can always change to a different one later. This 
