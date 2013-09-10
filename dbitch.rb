@@ -1,4 +1,5 @@
 require 'daybreak'
+require 'Log'
 
 # DBitch contains useful utilities for manipulating the Garbagé 
 # server database. It's essentially a big bundle of shortcuts I've written for 
