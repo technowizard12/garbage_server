@@ -18,6 +18,10 @@ How it's Done
 This code, in particular, is the front-facing web server, the database wrangler, and the arduino-responder. This is all done with Sinatra out of app.rb, but there are several separate doohickeys which help.
 
 - dbitch.rb
-  Wrangles the database
+  * Wrangles the database
 - arduino.rb
-  Handles arduino responses
+  * Handles arduino responses
+- log.rb
+  * The object which the responses are originally recorded in
+
+
