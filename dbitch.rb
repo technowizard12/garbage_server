@@ -28,6 +28,7 @@ require 'Log'
 #   42, :schadenfreude => 42, :empty => 42, :melancholy => 
 #   42, :none_of_the_above => 42}
 class DBitch
+  
   # Initializes a dbitch.
   #
   # dbname - a string describing the filepath where the database is located relative to the directory of the application. If the location does not hold a file of that name, by gum we'll make one there.
@@ -37,7 +38,7 @@ class DBitch
   #   myDBitch = DBitch.new('./mammas_recipes.db')
   #   # => Daybreak::DB
   #
-  # Returns the database opened or created.
+  # Returns the database currently loaded.
   def initialize(dbname)
     @db = Daybreak::DB.new dbname
     return self.get_DB
@@ -53,9 +54,8 @@ class DBitch
   #   myDBitch.load_DB('./mammas_recipes.db')
   #   # => Daybreak::DB
   #
-  # Returns the database opened or created.
+  # Returns the database currently loaded.
   def load_DB(dbname)
-
     @db = Daybreak::DB.new dbname
     return self.get_DB
     @db.flush

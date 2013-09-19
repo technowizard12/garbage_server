@@ -65,9 +65,13 @@
 
   <ul class="link-list">
   
+    <li><a href="./Arduino.html">Arduino</a>
+  
     <li><a href="./DBitch.html">DBitch</a>
   
     <li><a href="./Log.html">Log</a>
+  
+    <li><a href="./Object.html">Object</a>
   
   </ul>
 </nav>
@@ -102,14 +106,11 @@ register whether or not they are feeling any of the given emotions.
 That&#39;s not the fun part, though. When they press submit, a Daybreak
 database logs a hash of these emotions as the value, with the timestamp as
 the key. Every time anybody registers an hash at that timestamp, the values
-are added to the existing values. Every two minutes, an Arduino with an
-Ethernet shield will poll the server (This code!) for any logs from the
-past two minutes. The server will respond with a number of times to actuate
-each solenoid corresponding with each emotion. The Arduino keeps track of
-the time by keeping tabs on an NTP time server. When a timestamp of the
-proper time is reached, the arduino turns its attention to This code! and,
-when the exchange with This code! is complete, resumes monitoring the NTP
-server.</p>
+are added to the existing values. Constantly, the server will check for any
+logs at the current time any day during the previous week. For each
+timestamp entry, the server will command an <a
+href="Arduino.html">Arduino</a> (via Teleduino) to actuate the pins
+corresponding to the emotions in the entry.</p>
 
 <h2 id="label-How+it%27s+Done">How it&#39;s Done<span><a href="#label-How+it%27s+Done">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
